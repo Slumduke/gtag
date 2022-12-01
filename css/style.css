@@ -1,0 +1,65 @@
+* {
+  font-size: large;
+}
+
+h1 {
+  font-size: xx-large;
+}
+
+@Font-face {
+    font-family: "game";
+    src: url(/assets/fonts/PrintChar21.ttf);
+}
+
+body {
+    background: black;
+    padding: 100px;
+}
+
+body, input {
+    color: white;
+    font-family: 'game';
+    word-wrap: break-word;
+    line-height: 1.5em;
+}
+
+input {
+    width: 100%;
+    border: none;
+    outline-width: 0;
+    background: none;
+    margin: 10px;
+}
+  
+  @keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+  }
+  
+
+  #prompt p {
+    color: greenyellow;
+    white-space: nowrap ;
+  }
+
+  #enter {
+    animation: blink-animation 1s steps(5, start) infinite;
+    color: greenyellow;
+  }
+
+  #prompt {
+    display: flex;
+  }
+
+b {
+  color: cyan;
+}
+
+pre {
+  font-family: 'game';
+
+}
+
+
+
