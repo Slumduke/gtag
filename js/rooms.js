@@ -39,10 +39,9 @@ var rooms = {
     "clearing1": {
         "locked": "false",
         "name": "a hilltop",
-        "description": "It is dark out. You are atop a large hill. There is a storage shed to the north and a misty path leading down the hill to the south.",
+        "description": "It is dark out. You are atop a large hill. There is a storage shed to the north; it is locked from the inside. Maybe you could open it if you had a key. A misty path leads down the hill to the south.",
         "directions": {
             "west": "start",
-            "north": "shed"
         },
         "items": {
 

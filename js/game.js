@@ -72,10 +72,6 @@ function examine(item) {
     }
 }
 
-function toggleCrt() {
-    //test
-}
-
 function grab(item) {
     if (rooms[currentRoom].items[item] !== undefined && rooms[currentRoom].items[item].canGrab == true && inventory.includes(item) !== true) {
         inventory.push(rooms[currentRoom].items[item].name);
@@ -87,6 +83,16 @@ function grab(item) {
         print(item + " is already in your inventory")
     } else {
         print("Not a valid item")
+    }
+}
+
+function use(item) {
+    //print('test')
+    if (inventory.includes(item) === true && item === 'key' && rooms[currentRoom].name === 'a hilltop') {
+        print('you used the key')
+        rooms[currentRoom].directions.north = "shed";
+    } else {
+        print('Can not use ' + item)
     }
 }
 
@@ -122,6 +128,10 @@ function parseCommand(input) {
             var item = input.split(" ")[1];
             grab(item);
             break;
+        case "use":
+            var item = input.split(" ")[1];
+            use(item);
+        break;
         default:
             if (input === "" && invalidCounter >= 10 && invalidCounter <= 25) {
                 print("Stop Spamming!")
