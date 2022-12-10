@@ -83,7 +83,6 @@ var rooms = {
             },
             "handgun": {
                 "canGrab": true,
-                "loaded": false,
                 "name": "handgun",
                 "description": 'The handgun is in working condition. You check the magazine; it is empty.'
             },
@@ -92,7 +91,7 @@ var rooms = {
     "watchtower": {
         "name": "a watchtower",
         "image": "/assets/images/watchtower.jpeg",
-        "description": "watchtower",
+        "description": "The watchtower overlooks the mountain; there is lots of fog. You see a helipad south of the basecamp. There is a <b>map</b> on the inside.",
         "directions": {
             "east": "basecamp"
         },
@@ -119,18 +118,31 @@ var rooms = {
     },
     "armory": {
         "name": "an armory",
-        "image": "/assets/images/checkpoint.jpeg",
-        "description": "The armory is a mess. The weapon cabinets are empty except for one <b>red box</b>.",
+        "image": "/assets/images/armory.webp",
+        "description": "The armory is a mess. The weapon cabinets are empty except for one red box of <b>ammo</b>.",
         "directions": {
-            "west": "basecamp",
-            "east": "laboratory",
-            "north": "armory",
+            "south": "checkpoint",
         },
         "items": {
             "ammo": {
                 "canGrab": true,
                 "name": "ammo",
                 "description": 'It is a box of 9mm ammunition.'
+            },
+        },
+    },
+    "laboratory": {
+        "name": "a laboratory",
+        "image": "/assets/images/laboratory.webp",
+        "description": "",
+        "directions": {
+            "east": "basecamp"
+        },
+        "items": {
+            "map": {
+                "canGrab": true,
+                "name": "map",
+                "description": 'The map details the entire outdoor section of the facility. You notice the map pays special attention to the laboratory.'
             },
         },
     },

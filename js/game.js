@@ -3,6 +3,8 @@ var main = $('#main')
 var invalidCounter = 0
 var inventory = [];
 var descriptions = [];
+var loaded = false
+var helicopter = false
 
 function print(text) {
     var p = document.createElement('p');
@@ -101,6 +103,9 @@ function use(item) {
     } else if (inventory.includes(item) === true && item === 'keycard' && rooms[currentRoom].name === 'a basecamp') {
         print('You scan the keycard at the gate. The console replies: ACCESS GRANTED')
         rooms[currentRoom].directions.east = "checkpoint";
+    } else if (inventory.includes(item) === true && item === 'ammo') {
+        print('You load the handgun with the 9mm ammo.')
+        loaded = true
     } else {
         print('Can not use ' + item)
     }
