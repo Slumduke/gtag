@@ -63,7 +63,9 @@ function move(dir) {
 }
 
 function look() {
-    showImage(rooms[currentRoom].image, 500, 300, "image")
+    if (rooms[currentRoom].image !== undefined) {
+        showImage(rooms[currentRoom].image, 500, 300, "image")
+    }
     print(rooms[currentRoom].description);
 }
 
