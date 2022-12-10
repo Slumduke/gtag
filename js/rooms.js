@@ -1,5 +1,6 @@
 var rooms = {
     "start": {
+        "locked": "false",
         "name": "the observatory",
         "items": {
             "papers": {
@@ -25,6 +26,7 @@ var rooms = {
         },
     },
     "pier": {
+        "locked": "false",
         "name": "the pier",
         "description": "You are in the pier. Nothing is in this room but the telescope. The exit is east.",
         "directions": {
@@ -35,13 +37,36 @@ var rooms = {
         },
     },
     "clearing1": {
+        "locked": "false",
         "name": "a hilltop",
         "description": "It is dark out. You are atop a large hill. There is a storage shed to the north and a misty path leading down the hill to the south.",
         "directions": {
-            "west": "start"
+            "west": "start",
+            "north": "shed"
         },
         "items": {
 
+        },
+    },
+    "shed": {
+        "locked": "false",
+        "name": "a storage shed",
+        "description": "It is dark and musty. The room is lit by a single bulb. The light reveals a <b>workbench</b> sitting in the middle of the room.",
+        "directions": {
+            "west": "start",
+            "north": "shed"
+        },
+        "items": {
+            "workbench": {
+                "canGrab": false,
+                "name": "workbench",
+                "description": 'It is clear someone was in a hurry. The tools on the workbench have been rummaged. On the floor, underneath the bench, lies a <b>keycard</b>.'
+            },
+            "keycard": {
+                "canGrab": true,
+                "name": "keycard",
+                "description": 'The keycard is blue and made of metal. It is labeled "AGI LABS LEVEL 3."'
+            },
         },
     }
 }
@@ -53,7 +78,7 @@ var commands = [
     "inventory - list items in inventory",
     "use [item] - use specified item from inventory",
     "talk [NPC] - talk to specified NPC",
-    "examine [item] - describe specified item in more detail (includes items in inventory)",
+    "examine [item] - describe specified item in more detail (must be in current room)",
     "grab [item] - add specified item to inventory"
 ]
 
