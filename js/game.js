@@ -25,9 +25,13 @@ function showHelp(text) { // there isn't really a point to having this be its ow
 }
 
 function showInv(text) { // there isn't really a point to having this be its own function I just needed a reason to use a for loop, wait separate description
-    for (var i = 0; i < inventory.length; i++) {
-        print(inventory[i])
-        // print(JSON.stringify(rooms[currentRoom].items[item]));
+    if (inventory.length !== 0) {
+        for (var i = 0; i < inventory.length; i++) {
+            print(inventory[i])
+            // print(JSON.stringify(rooms[currentRoom].items[item]));
+        }
+    } else {
+        print("Inventory is empty")
     }
 }
 
@@ -74,8 +78,7 @@ function toggleCrt() {
 
 function grab(item) {
     if (rooms[currentRoom].items[item] !== undefined && rooms[currentRoom].items[item].canGrab == true && inventory.includes(item) !== true) {
-        inventory.push(rooms[currentRoom].items[item]);
-        //descriptions.push(rooms[currentRoom].items[item].description);
+        inventory.push(rooms[currentRoom].items[item].name);
         // inventory.push(rooms[currentRoom].items[item].description);
         print("added " + item + " to inventory")
     } else if (rooms[currentRoom].items[item] !== undefined && rooms[currentRoom].items[item].canGrab == false) {
@@ -109,11 +112,7 @@ function parseCommand(input) {
             printMap(outsideMap)
             break;
         case "inventory":
-            if (inventory.length !== 0) {
             showInv();
-            } else {
-                print("Inventory is empty")
-            }
             break;
         case "examine":
             var item = input.split(" ")[1];
@@ -130,8 +129,6 @@ function parseCommand(input) {
                 warn("I AM WARNING YOU!!!")
             } else if (input === "" && invalidCounter >= 50) {
                 $("body").load("why.html");
-            // } else if (input === "") {
-            //     print('Enter a valid command')
             } else {
                 print("zsh: command not found: " + input.split(" ")[0])
         }
@@ -153,3 +150,7 @@ $(document).ready(function(){
         }
     })
 })
+
+print('./gtag.sh')
+print('G.T.A.G. v3.0')
+print('G.T.A.G. is a text-based adventure game. It takes places in an abandoned research site. Your goal is to escape using a variety of text commands. If a word is highlighted in <b>blue</b> it usually means it can be interacted with. Type "help" for a list of commands.')
