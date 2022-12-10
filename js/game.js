@@ -98,6 +98,9 @@ function use(item) {
         rooms[currentRoom].directions.north = "shed";
     } else if (inventory.includes(item) === true && item === 'map') {
         printMap(outsideMap)
+    } else if (inventory.includes(item) === true && item === 'keycard' && rooms[currentRoom].name === 'a basecamp') {
+        print('You scan the keycard at the gate. The console replies: ACCESS GRANTED')
+        rooms[currentRoom].directions.east = "checkpoint";
     } else {
         print('Can not use ' + item)
     }
@@ -163,8 +166,6 @@ $(document).ready(function(){
         }
     })
 })
-
-// printMap(outsideMap)
 
 print('./gtag.sh')
 print('G.T.A.G. v3.0')

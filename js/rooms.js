@@ -83,8 +83,9 @@ var rooms = {
             },
             "handgun": {
                 "canGrab": true,
+                "loaded": false,
                 "name": "handgun",
-                "description": 'The handgun is in working condition. It is loaded with a full magazine of 9mm ammunition.'
+                "description": 'The handgun is in working condition. You check the magazine; it is empty.'
             },
         },
     },
@@ -100,6 +101,36 @@ var rooms = {
                 "canGrab": true,
                 "name": "map",
                 "description": 'The map details the entire outdoor section of the facility. You notice the map pays special attention to the laboratory.'
+            },
+        },
+    },
+    "checkpoint": {
+        "name": "a checkpoint",
+        "image": "/assets/images/checkpoint.jpeg",
+        "description": "There are armored vehicles parked next to the gate entrance. There is an armory to the north. To the east is a road that leads into the mountain. A sign next to it reads: LABORATORY.",
+        "directions": {
+            "west": "basecamp",
+            "east": "laboratory",
+            "north": "armory",
+        },
+        "items": {
+
+        },
+    },
+    "armory": {
+        "name": "an armory",
+        "image": "/assets/images/checkpoint.jpeg",
+        "description": "The armory is a mess. The weapon cabinets are empty except for one <b>red box</b>.",
+        "directions": {
+            "west": "basecamp",
+            "east": "laboratory",
+            "north": "armory",
+        },
+        "items": {
+            "ammo": {
+                "canGrab": true,
+                "name": "ammo",
+                "description": 'It is a box of 9mm ammunition.'
             },
         },
     },
