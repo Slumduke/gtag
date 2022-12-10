@@ -104,9 +104,6 @@ function parseCommand(input) {
         case "look":
             print(rooms[currentRoom].description);
             break;
-        case "intro":
-            print(tutorial);
-            break;
         case "map":
             // showImage(rooms[currentRoom].currentMap, 100, 100, "test");
             printMap(outsideMap)

@@ -57,8 +57,6 @@ var commands = [
     "grab [item] - add specified item to inventory"
 ]
 
-var tutorial = 'G.T.A.G. is a text-based adventure game. It takes places in an abandoned research site. Your goal is to escape using a variety of text commands. If a word is highlighted in <b>blue</b> it usually means it can be interacted with. Type "help" for a list of commands.'
-
 var outsideMap = 
 `
 +------------------------------------------------------------------------------------+
