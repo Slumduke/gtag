@@ -96,7 +96,11 @@ var rooms = {
             "east": "basecamp"
         },
         "items": {
-
+            "map": {
+                "canGrab": true,
+                "name": "map",
+                "description": 'The map details the entire outdoor section of the facility. You notice the map pays special attention to the laboratory.'
+            },
         },
     },
 }

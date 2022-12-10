@@ -72,9 +72,7 @@ function look() {
 function examine(item) {
     if (rooms[currentRoom].items[item] !== undefined) {
         print(rooms[currentRoom].items[item].description)
-    } else if (inventory.includes(item)) {
-        print(rooms.items[item].description)
-    } else {
+    }  else {
         print("Not a valid item")
     }
 }
@@ -98,6 +96,8 @@ function use(item) {
     if (inventory.includes(item) === true && item === 'key' && rooms[currentRoom].name === 'a hilltop') {
         print('You unlock the storage shed.')
         rooms[currentRoom].directions.north = "shed";
+    } else if (inventory.includes(item) === true && item === 'map') {
+        printMap(outsideMap)
     } else {
         print('Can not use ' + item)
     }
@@ -119,10 +119,6 @@ function parseCommand(input) {
             break;
         case "look":
             look();
-            break;
-        case "map":
-            // showImage(rooms[currentRoom].currentMap, 100, 100, "test");
-            printMap(outsideMap)
             break;
         case "inventory":
             showInv();
@@ -167,6 +163,8 @@ $(document).ready(function(){
         }
     })
 })
+
+// printMap(outsideMap)
 
 print('./gtag.sh')
 print('G.T.A.G. v3.0')
