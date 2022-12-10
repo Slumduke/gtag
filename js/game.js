@@ -62,6 +62,11 @@ function move(dir) {
     }
 }
 
+function look() {
+    showImage(rooms[currentRoom].image, 500, 300, "image")
+    print(rooms[currentRoom].description);
+}
+
 function examine(item) {
     if (rooms[currentRoom].items[item] !== undefined) {
         print(rooms[currentRoom].items[item].description)
@@ -111,7 +116,7 @@ function parseCommand(input) {
             main.empty();
             break;
         case "look":
-            print(rooms[currentRoom].description);
+            look();
             break;
         case "map":
             // showImage(rooms[currentRoom].currentMap, 100, 100, "test");

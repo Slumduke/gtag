@@ -1,6 +1,7 @@
 var rooms = {
     "start": {
         "name": "the observatory",
+        "image": "/assets/images/obs.jpeg",
         "items": {
             "papers": {
                 "canGrab": true,
