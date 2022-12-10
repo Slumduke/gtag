@@ -46,18 +46,9 @@ var rooms = {
     }
 }
 
-// var commands = [
-//     "<b>go</b> [direction](north, south, east, west) - move to room as long as direction is valid",
-//     "<b>description</b> - print description of current room",
-//     "<b>examine</b> [object] - print more information on given object",
-//     "<b>inventory</b> - print current inventory",
-//     "<b>clear</b> - clear terminal history",
-//     "<b>map</b> - view map"
-// ]
-
 var commands = [
     "go [direction] - travel north, south, east, or west",
-    "survey - describe surroundings",
+    "look - describe surroundings",
     "clear - clear terminal history",
     "inventory - list items in inventory",
     "use [item] - use specified item from inventory",

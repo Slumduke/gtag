@@ -2,10 +2,7 @@ var currentRoom = "start";
 var main = $('#main')
 var invalidCounter = 0
 var inventory = [];
-
-// var inventory = {
-
-// }
+var descriptions = [];
 
 function print(text) {
     var p = document.createElement('p');
@@ -30,8 +27,7 @@ function showHelp(text) { // there isn't really a point to having this be its ow
 function showInv(text) { // there isn't really a point to having this be its own function I just needed a reason to use a for loop, wait separate description
     for (var i = 0; i < inventory.length; i++) {
         print(inventory[i])
-        // have it print item description in inventory instead
-        // just have it push the same thing this isnt hard
+        // print(JSON.stringify(rooms[currentRoom].items[item]));
     }
 }
 
@@ -54,7 +50,7 @@ function warn(text) {
 }
 
 function move(dir) {
-    if (rooms[currentRoom].directions[dir] !== undefined) {
+    if (rooms[currentRoom].directions[dir] !== undefined /* and boolean value in the checkpoint is true or something*/) {
         currentRoom = rooms[currentRoom].directions[dir];
         print("You enter " + (rooms[currentRoom].name))
     } else {
@@ -78,7 +74,8 @@ function toggleCrt() {
 
 function grab(item) {
     if (rooms[currentRoom].items[item] !== undefined && rooms[currentRoom].items[item].canGrab == true && inventory.includes(item) !== true) {
-        inventory.push(rooms[currentRoom].items[item].name);
+        inventory.push(rooms[currentRoom].items[item]);
+        //descriptions.push(rooms[currentRoom].items[item].description);
         // inventory.push(rooms[currentRoom].items[item].description);
         print("added " + item + " to inventory")
     } else if (rooms[currentRoom].items[item] !== undefined && rooms[currentRoom].items[item].canGrab == false) {
@@ -104,7 +101,7 @@ function parseCommand(input) {
         case "clear":
             main.empty();
             break;
-        case "survey":
+        case "look":
             print(rooms[currentRoom].description);
             break;
         case "intro":
@@ -159,41 +156,3 @@ $(document).ready(function(){
         }
     })
 })
-
-// switch(input) {
-//     case "north":
-//         move("north");
-//         break;
-//     case "south":
-//         move("south");
-//         break;
-//     case "east":
-//         move("east");
-//             break;
-//     case "west":
-//         console.log('west')
-//         move("west");
-//             break;
-//     case "clear":
-//         console.log('test')
-//         main.empty();
-//         break;
-//     case "help":
-//         print(commands.join('<br><br>'));
-//         break;
-//     case "description":
-//         print(rooms[currentRoom].description);
-//         break;
-//     default:
-//         if (input === "" && invalidCounter >= 10 && invalidCounter <= 25) {
-//             print("Stop Spamming!")
-//         } else if (input === "" && invalidCounter >= 25 && invalidCounter <= 50) {
-//             print("I AM WARNING YOU!!!")
-//         } else if (input === "" && invalidCounter >= 50) {
-//             $("body").load("why.html");
-//         } else if (input === "") {
-//             print('Enter a valid command')
-//         } else {
-//             print("zsh: command not found: " + input)
-//         }
-// }
