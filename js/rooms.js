@@ -134,16 +134,9 @@ var rooms = {
     "laboratory": {
         "name": "a laboratory",
         "image": "/assets/images/laboratory.webp",
-        "description": "",
+        "description": "There are rows of computers. An armed guard is stationed at a door to the south. He does not see you.",
         "directions": {
-            "east": "basecamp"
-        },
-        "items": {
-            "map": {
-                "canGrab": true,
-                "name": "map",
-                "description": 'The map details the entire outdoor section of the facility. You notice the map pays special attention to the laboratory.'
-            },
+            "west": "checkpoint"
         },
     },
 }

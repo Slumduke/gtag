@@ -59,6 +59,8 @@ function move(dir) {
     if (rooms[currentRoom].directions[dir] !== undefined /* and boolean value in the checkpoint is true or something*/) {
         currentRoom = rooms[currentRoom].directions[dir];
         print("You enter " + (rooms[currentRoom].name))
+    } else if (rooms[currentRoom].directions[dir] == undefined && rooms[currentRoom].name === "a laboratory") {
+        $("body").load("guard.html");
     } else {
         print("You can not go " + dir)
     }
@@ -106,6 +108,10 @@ function use(item) {
     } else if (inventory.includes(item) === true && item === 'ammo') {
         print('You load the handgun with the 9mm ammo.')
         loaded = true
+    } else if (inventory.includes(item) === true && item === 'handgun' && loaded === true && rooms[currentRoom].name === 'a laboratory') {
+        print('You fire the gun at the guard. He falls dead.')
+    } else if (inventory.includes(item) === true && item === 'handgun' && loaded === false && rooms[currentRoom].name === 'a laboratory') {
+        print('The gun is not loaded.')
     } else {
         print('Can not use ' + item)
     }
