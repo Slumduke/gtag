@@ -1,6 +1,5 @@
 var rooms = {
     "start": {
-        "locked": "false",
         "name": "the observatory",
         "items": {
             "papers": {
@@ -26,7 +25,6 @@ var rooms = {
         },
     },
     "pier": {
-        "locked": "false",
         "name": "the pier",
         "description": "You are in the pier. Nothing is in this room but the telescope. The exit is east.",
         "directions": {
@@ -37,23 +35,21 @@ var rooms = {
         },
     },
     "clearing1": {
-        "locked": "false",
         "name": "a hilltop",
         "description": "It is dark out. You are atop a large hill. There is a storage shed to the north; it is locked from the inside. Maybe you could open it if you had a key. A misty path leads down the hill to the south.",
         "directions": {
             "west": "start",
+            "south": "basecamp",
         },
         "items": {
 
         },
     },
     "shed": {
-        "locked": "false",
         "name": "a storage shed",
         "description": "It is dark and musty. The room is lit by a single bulb. The light reveals a <b>workbench</b> sitting in the middle of the room.",
         "directions": {
-            "west": "start",
-            "north": "shed"
+            "south": "clearing1"
         },
         "items": {
             "workbench": {
@@ -67,7 +63,17 @@ var rooms = {
                 "description": 'The keycard is blue and made of metal. It is labeled "AGI LABS LEVEL 3."'
             },
         },
-    }
+    },
+    "basecamp": {
+        "name": "a basecamp",
+        "description": "base camp",
+        "directions": {
+            "north": "clearing1",
+        },
+        "items": {
+
+        },
+    },
 }
 
 var commands = [

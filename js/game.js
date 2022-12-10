@@ -89,7 +89,7 @@ function grab(item) {
 function use(item) {
     //print('test')
     if (inventory.includes(item) === true && item === 'key' && rooms[currentRoom].name === 'a hilltop') {
-        print('you used the key')
+        print('You unlock the storage shed.')
         rooms[currentRoom].directions.north = "shed";
     } else {
         print('Can not use ' + item)
