@@ -21,13 +21,13 @@ var rooms = {
         },
         "description": "You are in the observatory. The viewing window is closed. In a corner sits a desk that is littered with <b>papers</b>. A worn out <b>jacket</b> is laying on the ground. There is an exit to the east and a staircase to the west.",
         "directions": {
-            "east": "clearing1",
-            "west": "pier" 
+            "east": "clearing1", 
         },
     },
     "clearing1": {
         "name": "a hilltop",
-        "description": "It is dark out. You are atop a large hill. There is a storage shed to the north; it is locked from the inside. Maybe you could open it if you had a key. A misty path leads down the hill to the south.",
+        "image": "/assets/images/clearing.jpeg",
+        "description": "It is middle of the day. You are atop a large hill. There is a storage shed to the north; it is locked from the inside. Maybe you could open it if you had a key. A misty path leads down the hill to the south.",
         "directions": {
             "west": "start",
             "south": "basecamp",
@@ -38,6 +38,7 @@ var rooms = {
     },
     "shed": {
         "name": "a storage shed",
+        "image": "/assets/images/shed.jpeg",
         "description": "It is dark and musty. The room is lit by a single bulb. The light reveals a <b>workbench</b> sitting in the middle of the room.",
         "directions": {
             "south": "clearing1"
@@ -57,6 +58,7 @@ var rooms = {
     },
     "basecamp": {
         "name": "a basecamp",
+        "image": "/assets/images/basecamp.webp",
         "description": "base camp",
         "directions": {
             "north": "clearing1",
