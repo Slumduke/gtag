@@ -59,11 +59,18 @@ var rooms = {
     "basecamp": {
         "name": "a basecamp",
         "image": "/assets/images/basecamp.webp",
-        "description": "You are in the main tent. There are lots of lab instruments. There is a <b>backpack</b> sitting on the floor.",
+        "description": "You are surrounded by lots of tents. There is a <b>backpack</b> sitting on the floor near the entrance to the main tent. You can barely make out a tower to the west. The east is blocked by a large fence. There is a <b>gate</b>.",
         "directions": {
             "north": "clearing1",
+            "west": "watchtower",
+            "south": "helipad",
         },
         "items": {
+            "gate": {
+                "canGrab": false,
+                "name": "gate",
+                "description": 'You walk to the gate. It looks like there is a card reader.'
+            },
             "backpack": {
                 "canGrab": false,
                 "name": "backpack",
@@ -79,6 +86,17 @@ var rooms = {
                 "name": "handgun",
                 "description": 'The handgun is in working condition. It is loaded with a full magazine of 9mm ammunition.'
             },
+        },
+    },
+    "watchtower": {
+        "name": "a watchtower",
+        "image": "/assets/images/watchtower.jpeg",
+        "description": "watchtower",
+        "directions": {
+            "east": "basecamp"
+        },
+        "items": {
+
         },
     },
 }
