@@ -59,12 +59,26 @@ var rooms = {
     "basecamp": {
         "name": "a basecamp",
         "image": "/assets/images/basecamp.webp",
-        "description": "base camp",
+        "description": "You are in the main tent. There are lots of lab instruments. There is a <b>backpack</b> sitting on the floor.",
         "directions": {
             "north": "clearing1",
         },
         "items": {
-
+            "backpack": {
+                "canGrab": false,
+                "name": "backpack",
+                "description": 'The backpack is worn and unwearable. Inside is a <b>letter</b> and a <b>handgun</b>.'
+            },
+            "letter": {
+                "canGrab": true,
+                "name": "letter",
+                "description": 'The letter reads: SOMETHING HAS GONE WRONG WITH THE EXPERIMENT. I OVERHEARD SOMEONE SAY WE FINALLY ACHIEVED GENERAL INTELLIGENCE. ARMED GUARDS HAVE BEEN EVACUATING THE FACILITY. I DO NOT KNOW WHERE THEY ARE TAKING US. SOMETHING IS WRONG. '
+            },
+            "handgun": {
+                "canGrab": true,
+                "name": "handgun",
+                "description": 'The handgun is in working condition. It is loaded with a full magazine of 9mm ammunition.'
+            },
         },
     },
 }
