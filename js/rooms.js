@@ -142,7 +142,7 @@ var rooms = {
     "room2": {
         "name": "a strange room",
         "image": "/assets/images/room2.jpeg",
-        "description": "The room is ominous and dimly lit. There is a computer in the middle of the <b>room</b>. ",
+        "description": "The room is ominous and dimly lit. There is a <b>computer</b> in the middle of the room. ",
         "directions": {
             "north": "laboratory"
         },
