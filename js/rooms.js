@@ -19,7 +19,7 @@ var rooms = {
                 "description": 'A silver key. What does it open?'
             }
         },
-        "description": "You are in the observatory. The viewing window is closed. In a corner sits a desk that is littered with <b>papers</b>. A worn out <b>jacket</b> is laying on the ground. There is an exit to the east and a staircase to the west.",
+        "description": "You are in the observatory. The viewing window is closed. In a corner sits a desk that is littered with <b>papers</b>. A worn out <b>jacket</b> is laying on the ground.",
         "directions": {
             "east": "clearing1", 
         },
@@ -139,6 +139,36 @@ var rooms = {
             "west": "checkpoint"
         },
     },
+    "room2": {
+        "name": "a strange room",
+        "image": "/assets/images/room2.jpeg",
+        "description": "The room is ominous and dimly lit. There is a computer in the middle of the <b>room</b>. ",
+        "directions": {
+            "north": "laboratory"
+        },
+        "items": {
+            "computer": {
+                "canGrab": false,
+                "name": "computer",
+                "description": 'The computer lists lots of options, one of them reads: helicopter.'
+            },
+        },
+    },
+    "helipad": {
+        "name": "a helipad",
+        "image": "/assets/images/helipad.webp",
+        "description": "There is a <b>helicopter</b> in the middle of the helipad.",
+        "directions": {
+            "north": "basecamp"
+        },
+        "items": {
+            "helicopter": {
+                "canGrab": false,
+                "name": "helicopter",
+                "description": 'The helicopter appears fully operational. Maybe you can use this to escape.'
+            },
+        },
+    },
 }
 
 var commands = [
@@ -147,7 +177,6 @@ var commands = [
     "clear - clear terminal history",
     "inventory - list items in inventory",
     "use [item] - use specified item from inventory",
-    "talk [NPC] - talk to specified NPC",
     "examine [item] - describe specified item in more detail (must be in current room)",
     "grab [item] - add specified item to inventory"
 ]

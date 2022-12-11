@@ -3,8 +3,9 @@ var main = $('#main')
 var invalidCounter = 0
 var inventory = [];
 var descriptions = [];
-var loaded = false
-var helicopter = false
+var loaded = false;
+var helicopter = false;
+var guardDead = false;
 
 function print(text) {
     var p = document.createElement('p');
@@ -59,7 +60,7 @@ function move(dir) {
     if (rooms[currentRoom].directions[dir] !== undefined /* and boolean value in the checkpoint is true or something*/) {
         currentRoom = rooms[currentRoom].directions[dir];
         print("You enter " + (rooms[currentRoom].name))
-    } else if (rooms[currentRoom].directions[dir] == undefined && rooms[currentRoom].name === "a laboratory") {
+    } else if (rooms[currentRoom].directions[dir] == undefined && rooms[currentRoom].name === "a laboratory" && guardDead === false) {
         $("body").load("guard.html");
     } else {
         print("You can not go " + dir)
@@ -110,8 +111,17 @@ function use(item) {
         loaded = true
     } else if (inventory.includes(item) === true && item === 'handgun' && loaded === true && rooms[currentRoom].name === 'a laboratory') {
         print('You fire the gun at the guard. He falls dead.')
+        guardDead = true;
+        rooms[currentRoom].directions.south = "room2";
     } else if (inventory.includes(item) === true && item === 'handgun' && loaded === false && rooms[currentRoom].name === 'a laboratory') {
         print('The gun is not loaded.')
+    } else if (item === 'computer' && rooms[currentRoom].name === 'a strange room') {
+        print('You navigate to the helicopter option and disable the override. The computer responds: HELICOPTER ACTIVE')
+        helicopter = true
+    } else if (item === 'helicopter' && rooms[currentRoom].name === 'a helipad' && helicopter === true) {
+        $("body").load("win.html");
+    } else if (item === 'helicopter' && rooms[currentRoom].name === 'a helipad' && helicopter === false) {
+        print('You enter the helicopter and attempt to turn it on, it fails. The console reads: HELICOPTER OVERRIDE ACTIVE')
     } else {
         print('Can not use ' + item)
     }
