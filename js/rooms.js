@@ -1,7 +1,7 @@
 var rooms = {
     "start": {
         "name": "the observatory",
-        "image": "/assets/images/obs.jpeg",
+        "image": "assets/images/obs.jpeg",
         "items": {
             "papers": {
                 "canGrab": true,
@@ -26,7 +26,7 @@ var rooms = {
     },
     "clearing1": {
         "name": "a hilltop",
-        "image": "/assets/images/clearing.jpeg",
+        "image": "assets/images/clearing.jpeg",
         "description": "It is middle of the day. You are atop a large hill. There is a storage shed to the north; it is locked from the inside. Maybe you could open it if you had a key. A misty path leads down the hill to the south.",
         "directions": {
             "west": "start",
@@ -38,7 +38,7 @@ var rooms = {
     },
     "shed": {
         "name": "a storage shed",
-        "image": "/assets/images/shed.jpeg",
+        "image": "assets/images/shed.jpeg",
         "description": "It is dark and musty. The room is lit by a single bulb. The light reveals a <b>workbench</b> sitting in the middle of the room.",
         "directions": {
             "south": "clearing1"
@@ -58,7 +58,7 @@ var rooms = {
     },
     "basecamp": {
         "name": "a basecamp",
-        "image": "/assets/images/basecamp.webp",
+        "image": "assets/images/basecamp.webp",
         "description": "You are surrounded by lots of tents. There is a <b>backpack</b> sitting on the floor near the entrance to the main tent. You can barely make out a tower to the west. The east is blocked by a large fence. There is a <b>gate</b>.",
         "directions": {
             "north": "clearing1",
@@ -90,7 +90,7 @@ var rooms = {
     },
     "watchtower": {
         "name": "a watchtower",
-        "image": "/assets/images/watchtower.jpeg",
+        "image": "assets/images/watchtower.jpeg",
         "description": "The watchtower overlooks the mountain; there is lots of fog. You see a helipad south of the basecamp. There is a <b>map</b> on the inside.",
         "directions": {
             "east": "basecamp"
@@ -105,7 +105,7 @@ var rooms = {
     },
     "checkpoint": {
         "name": "a checkpoint",
-        "image": "/assets/images/checkpoint.jpeg",
+        "image": "assets/images/checkpoint.jpeg",
         "description": "There are armored vehicles parked next to the gate entrance. There is an armory to the north. To the east is a road that leads into the mountain. A sign next to it reads: LABORATORY.",
         "directions": {
             "west": "basecamp",
@@ -118,7 +118,7 @@ var rooms = {
     },
     "armory": {
         "name": "an armory",
-        "image": "/assets/images/armory.webp",
+        "image": "assets/images/armory.webp",
         "description": "The armory is a mess. The weapon cabinets are empty except for one red box of <b>ammo</b>.",
         "directions": {
             "south": "checkpoint",
@@ -133,7 +133,7 @@ var rooms = {
     },
     "laboratory": {
         "name": "a laboratory",
-        "image": "/assets/images/laboratory.webp",
+        "image": "assets/images/laboratory.webp",
         "description": "There are rows of computers. An armed guard is stationed at a door to the south. He does not see you.",
         "directions": {
             "west": "checkpoint"
@@ -141,7 +141,7 @@ var rooms = {
     },
     "room2": {
         "name": "a strange room",
-        "image": "/assets/images/room2.jpeg",
+        "image": "assets/images/room2.jpeg",
         "description": "The room is ominous and dimly lit. There is a <b>computer</b> in the middle of the room. ",
         "directions": {
             "north": "laboratory"
@@ -156,7 +156,7 @@ var rooms = {
     },
     "helipad": {
         "name": "a helipad",
-        "image": "/assets/images/helipad.webp",
+        "image": "assets/images/helipad.webp",
         "description": "There is a <b>helicopter</b> in the middle of the helipad.",
         "directions": {
             "north": "basecamp"
