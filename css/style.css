@@ -8,7 +8,7 @@ h1 {
 
 @Font-face {
     font-family: "game";
-    src: url(assets/fonts/PrintChar21.ttf);
+    src: url(../assets/fonts/PrintChar21.ttf);
 }
 
 body {
